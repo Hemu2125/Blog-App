@@ -1,0 +1,59 @@
+<%- include("partials/header"); -%>
+
+<style>
+  h2{
+    text-align: center;
+  }
+
+  .contact-form {
+    max-width: 50rem;
+    margin: auto;
+  }
+
+  .contact-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .contact-inputs input,
+  .contact-inputs textarea {
+    border: 1px solid black; 
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+  }
+
+  .contact-inputs input:focus,
+  .contact-inputs textarea:focus {
+    outline: none;
+  }
+
+  .contact-inputs input[type="submit"] {
+    cursor: pointer;
+    transition: all 0.1s;
+    background-color:black;
+    color:white;
+    border: 2px solid black;
+  }
+  .contact-inputs input[type="submit"]:hover {
+    background-color: black ;
+    border: 1px solid black;
+    color:white;
+    transform: scale(1);
+  }
+</style>
+
+<div class="container">
+  <h2>Contact Us</h2>
+  <p><%= contactContent %></p>
+
+  <form action="https://formspree.io/f/xwpevknn" method="POST" class="contact-inputs">
+    <input type="text" placeholder="Name" name="name" required  />
+    <input type="email" name="Email" placeholder="Email"  required />
+    <textarea name="Message" cols="30" rows="5" required  placeholder="Enter your message"></textarea>
+    <input type="submit" value="send" />
+  </form>
+</div>
+
+<%- include("partials/footer"); -%>

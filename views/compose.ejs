@@ -1,0 +1,53 @@
+
+<%- include("partials/header"); -%>
+<style>
+    h2{
+    text-align: center;
+  }
+  .compose-form {
+    max-width: 100rem;
+    margin: auto;
+  }
+
+  .form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    border: 1px solid black; 
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+  }
+  .form-group input[type="submit"] {
+    cursor: pointer;
+    transition: all 0.1s;
+    background-color:black;
+    color:white;
+    border: 2px solid black;
+  }
+  .form-group input[type="submit"]:hover {
+    background-color: black ;
+    border: 1px solid black;
+    color:white;
+    transform: scale(1);
+  }
+</style>
+    <h2>Compose</h2>
+    <form class="compose-form" action="/compose" method="post">
+      <div class="form-group">
+        <input class="form-control" placeholder="Title" type="text" name="postTitle">
+        <textarea class="form-control" placeholder="Post" name="postBody" rows="5" cols="30"></textarea>
+        <input type="submit" value="Publish" />
+      </div>
+    </form>
+
+<%- include("partials/footer"); -%>
